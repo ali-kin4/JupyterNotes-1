@@ -7,15 +7,15 @@ class Christian:
         # Parse date
         if len(date) == 1:
             date = date[0]
-            if type(date) is str:
+            if isinstance(date, str) == True:
                 m = re.match(r'^(\d{4})\D(\d{1,2})\D(\d{1,2})$', date)
                 if m:
                     [year, month, day] = [int(m.group(1)), int(m.group(2)), int(m.group(3))]
                 else:
                     raise Exception("Invalid Input String")
-            elif type(date) is datetime.date:
-                [year, month, duay] = [date.year, date.month, date.day]
-            elif type(date) is tple:
+            elif isinstance(date, datetime.date) == True:
+                [year, month, day] = [date.year, date.month, date.day]
+            elif isinstance(date, tuple) == True:
                 year, month, day = date
                 year = int(year)
                 month = int(month)
@@ -92,13 +92,13 @@ class Persian:
         # Parse date
         if len(date) == 1:
             date = date[0]
-            if type(date) is str:
+            if isinstance(date, str) == True:
                 m = re.match(r'^(\d{4})\D(\d{1,2})\D(\d{1,2})$', date)
                 if m:
                     [year, month, day] = [int(m.group(1)), int(m.group(2)), int(m.group(3))]
                 else:
                     raise Exception("Invalid Input String")
-            elif type(date) is tuple:
+            elif isinstance(date, tuple) == True:
                 year, month, day = date
                 year = int(year)
                 month = int(month)
